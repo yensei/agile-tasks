@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/header :: header"></head>
+<body class="d-flex flex-column min-vh-100">
+	<nav th:replace="fragments/menu :: menu" ></nav>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+         <div class="home-button d-flex justify-content-around col m-5 form-rounded">
+             <a href="#" class="btn btn-squared-default">                               
+                 <br /><span class="display-2">Orden de servicios</span>              
+             </a>
+         </div>                                             
+         <div class="home-button d-flex justify-content-around col m-5 form-rounded">
+             <a href="#" class="btn btn-squared-default">                  
+                 <br /><span class="display-2">Tareas</span>                     
+             </a>
+         </div>
+       </div>
+	  </div>
+	</div>
+	  <!-- Footer -->	
+	<footer th:insert="fragments/footer :: footer" class="mt-auto"></footer>
+	<span th:insert="fragments/scripts-imports-main :: script-main"></span>		
+</body>
+</html>

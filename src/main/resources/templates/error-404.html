@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org">
+	<head th:include="fragments/header :: header"></head>
+	<body class="d-flex flex-column min-vh-100">		
+		<div class="container-fluid">	
+			<div class="container">
+				<div class="row mt-3">
+			    <div class="col-sm-5 text-center" style="width: auto; margin: auto auto;">		        	
+						<h1 class="alert alert-title">Recurso no encontrado!</h1>
+					</div>
+	    	</div>
+	    	<div id="errorDetail" class="row mt-3">
+	    		<div class="alert alert-detail" role="alert">
+						<p>El recurso o p&aacute;gina solicitada no existe o no est&aacute; disponible en este momento </p>
+					</div>
+	    	</div>
+	    	<div class="row mt-3">
+	    		<pre class="text-center"><a href="javascript:history.back()">Atr&aacute;s</a>&nbsp; | &nbsp;<a href="/">Inicio</a></pre>	
+	    	</div>
+			</div>		
+		</div>				
+		<!-- Footer -->
+		<footer th:insert="fragments/footer :: footer" class="mt-auto"></footer>
+		<!-- Scripts -->
+		<span th:insert="fragments/scripts-imports-main :: script-main"></span>
+	</body>
+</html>

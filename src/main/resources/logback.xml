@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+		<!-- produccion  -->
+	<!-- <property name="LOGS" value="~/temp" />
+    <property name="APP_NAME" value="Agile Tasks" /> -->
+		<!-- desarrollo --> 
+     <property name="LOGS" value="/tmp" />
+     <property name="APP_NAME" value="Agile-Tasks" />		 -->
+    <property name="HOST" value="localhost" /> 
+    <property name="PORT" value="8080" />
+    <property name="LOG_PATTERN_SYSLOG" value="date=%d;log-level=%p;app=${APP_NAME};thread=%t;trace=%X{traceId},%X{spanId};logger=%logger;message=%m%n%xException"/>
+    <property name="LOG_PATTERN" value="%d %p [%t] %C{1.} : %m%n" />
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">        
+       	<encoder>
+       		<!-- Fecha | LogLevel | Hilo | Clase asignada al Logger | Clase desde la cual se hizo Logging | Message -->
+      		<pattern>%d{ISO8601} %highlight(%-5level) [%thread] %logger{100} %yellow(%C{1.}) : %msg%n%throwable</pattern>
+    	</encoder>
+    </appender>
+
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/agile-task.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- Fecha | LogLevel | Hilo | Clase desde la cual se hizo Logging | Message -->
+            <Pattern>${LOG_PATTERN}</Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Se trunca el archivo de log cada día o al superar los 10MB. -->
+            <fileNamePattern>${LOGS}/archived/agile-tasks-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+    
+    <appender name="RollingFileHibernate" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/agile-tasks-hibernate.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- Fecha | LogLevel | Hilo | Clase desde la cual se hizo Logging | Message -->
+            <Pattern>${LOG_PATTERN}</Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Se trunca el archivo de log cada día o al superar los 10MB. -->
+            <fileNamePattern>${LOGS}/archived/agile-tasks-hibernate-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+   
+    <!-- LOG por defecto para todos los paquetes -->
+    <root level="info">
+        <appender-ref ref="Console" />
+    </root>    
+
+    <!-- LOG p/ paquetes 'com.monalisa.bancardconnect.*'  -->
+    <logger name="py.com.mryensei.agile" level="info" additivity="false">    		
+        <appender-ref ref="RollingFile" />
+        <appender-ref ref="Console" />       
+    </logger>
+    
+    <logger name="org.hibernate" level="info" additivity="false">
+        <appender-ref ref="RollingFileHibernate" />        
+    </logger>    
+</configuration>

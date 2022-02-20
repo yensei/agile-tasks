@@ -1,0 +1,199 @@
+
+:root {
+  --blue-monalisa: #162b55;
+  --white: #ffffff;
+}
+
+	/* Smartphone , small screen*/
+	@media (max-width: 575.98px) {
+		footer a#monalisa-link-web{
+			font-size: 20px;
+		}
+		
+		footer div.social > p > a > img{
+			width: 2rem;
+		}
+		
+		footer div#copyright {
+    	margin-bottom: 0rem !important
+		}
+		
+		footer div#copyright > p:first-child{
+			margin-bottom: 1rem !important;
+		}
+		
+		footer #copyright > p#footer-links  {
+			font-size: 10px;
+		}
+		
+		footer #copyright > p#footer-links > a {
+			font-size: 10px;
+		}
+		
+		footer #copyright > hr.line-separator-footer {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}		
+	}
+
+	/* Smartphone */
+	@media (min-width: 576px) {
+		footer a#monalisa-link-web{
+			font-size: 28px;
+		}		
+		footer .social > img{
+			width: 3.5rem;
+		}
+	}
+	
+	/* iPad */
+	@media (min-width: 768px) {	
+		footer a#monalisa-link-web{
+			font-size: 40px;
+		}	  
+	}
+		
+	/* Notebook, Desktop */
+	@media (min-width: 992px) {
+		footer a#monalisa-link-web{
+				font-size: 40px;
+		}	  
+	}	
+	
+	footer{
+		background-color: var(--blue-monalisa) !important;
+		padding-top: 0px !important;
+		font-family: ChamfortFamily-Bold
+	}
+	
+	
+	footer div hr {
+		width: 80%;		
+		margin-right: auto;  
+		margin-left: auto;
+	}
+	
+	footer hr.line-separator-footer{
+		background-color: var(--white);
+		height: 2px;
+		opacity: 1;
+	}
+	
+	footer div p a{
+		font-size: 23px;
+		color: var(--white);
+		text-decoration: none;
+	}
+	
+	footer div#copyright > p {
+		margin-bottom: 5rem;
+	}
+	/*
+	footer a#monalisa-link-web{
+		font-size: 40px;
+	}
+	*/
+	footer div p {
+		margin: 0;
+		padding: 0;
+	}
+	
+	footer div h3,
+	footer div p,
+	footer div p a,
+	footer .info-Contact .info-title,
+	footer div .user_menu ul li a{
+		color: var(--white) !important;		
+	}
+	
+	footer div.contact {
+    	margin-left: 2%;
+    	margin-right: auto;
+    	border-bottom: 1px solid #c5cfd7;
+    	clear: right;
+    	margin-bottom: 7px;
+    	width: 95% !important;
+	}
+
+	footer div.contact h3{
+		color: var(--white);
+		vertical-align: bottom;
+	}
+	
+	footer div.contact, footer div.contact h3, footer div.contact form{
+		float: left;
+	}
+	
+	footer div.contact .social{
+		float: right;
+		clear: right !important		
+	}
+
+	footer div.contact .social ul{
+		width: auto;
+	}
+
+	footer div.contact .social ul li{
+		float: right;
+		height: 28px;
+		width: auto;
+	}
+	
+	footer div.contact .social ul li a img{
+		height: 28px;
+		width: auto;
+		padding: 0 3px;
+	}
+
+	footer div.contact .social ul li a img:hover{
+		opacity: 0.7;
+	}
+
+	footer div.contact input[type=text] {
+    	background: var(--white);
+    	color: var(--blue-monalisa);
+    	border: 1px solid var(--blue-monalisa);
+    	margin-bottom: 7px !important;
+	}
+
+	footer div.contact input[type=submit] {
+	    background: var(--blue-monalisa);
+	    margin-left: -1px;
+	    border: 1px solid var(--white);
+	    color: var(--white);
+		max-height: 33px;
+		cursor: pointer;
+	}
+
+/* 	footer .info-Contact{ */
+/* 		margin-bottom: 7px; */
+/* 	} */
+/* 	footer .info-Contact .information{ */
+/* 		margin-bottom: 5px; */
+/* 	} */
+
+	footer div h6 {
+		color: var(--white);
+		float: left;
+		margin-top: 1%;
+    margin-right: 1%;
+	}
+
+	footer #foot_logo{
+		position: absolute;
+		right: 5%;
+		margin-top: 8em;
+	}
+
+	footer div.social ul li a{
+		width: auto !important;
+    height: auto !important;
+	}
+
+	footer div.social {
+    	width: auto;
+	}
+
+	footer .copy p {
+		margin-left: 4px;
+	}

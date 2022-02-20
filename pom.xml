@@ -20,18 +20,6 @@
 		<joinfaces.version>3.3.0-rc2</joinfaces.version>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.joinfaces</groupId>
-				<artifactId>joinfaces-dependencies</artifactId>
-				<version>${joinfaces.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-    	</dependencies>
-  	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -52,6 +40,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
     	 </dependency> 
+		 <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		 
 		 <!-- TESTING-->
 		 <dependency>
@@ -66,23 +58,6 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
      	</dependency>
-
-		 <!-- FRONTEND DEPENDENCIES --> 
-		 <!-- 
-		<dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>11.0.0</version>
-        </dependency> 
-		 -->
-		<dependency>
-			<groupId>org.joinfaces</groupId>
-			<artifactId>primefaces-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>
